@@ -1,6 +1,8 @@
 function Thermostat() {
   this._temp = 20
   this._powerSave = true
+  this.MAX_TEMP_PSM_OFF = 32
+  this.MAX_TEMP_PSM_ON = 25
 }
 
 Thermostat.prototype.temp = function(){
@@ -8,11 +10,11 @@ Thermostat.prototype.temp = function(){
 }
 
 Thermostat.prototype.increaseTemp = function() {
-  if (this._powerSave && this._temp >= 25) {
-    this._temp = 25;
+  if (this._powerSave && this._temp >= this.MAX_TEMP_PSM_ON) {
+    this._temp = this.MAX_TEMP_PSM_ON;
   }
-  else if (this._powerSave === false && this._temp >= 32) {
-    this._temp = 32;
+  else if (this._powerSave === false && this._temp >= this.MAX_TEMP_PSM_OFF) {
+    this._temp = this.MAX_TEMP_PSM_OFF;
   }
   else {
     this._temp += 1;
