@@ -48,15 +48,15 @@ Thermostat.prototype.reset = function() {
 
 Thermostat.prototype.energyUsage = function() {
   if (this._temp < 18) {
-    return 'Low Usage';
+    return 'lowUsage';
   }
   else if (this._temp < 25) {
-    return 'Medium Usage';
+    return 'mediumUsage';
   }
   else {
-    return 'High Usage';
+    return 'highUsage';
   }
 }
 
  var thermostat = new Thermostat();
- console.log(thermostat.increaseTemp());
+ // console.log(thermostat.increaseTemp());
