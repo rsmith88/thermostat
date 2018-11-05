@@ -5,7 +5,7 @@ function Thermostat() {
   this.MAX_TEMP_PSM_ON = 25
 }
 
-Thermostat.prototype.temp = function(){
+Thermostat.prototype.temp = function() {
   return this._temp;
 }
 
